@@ -1,0 +1,45 @@
+Am urmarit tutorialul:
+http://www.creativebloq.com/html5/build-custom-html5-video-player-9134473
+
+
+
+<progress id='progress-bar' min='0' max='100' value='0'>0% played</progress>
+<button id='volume-inc-button' class='volume-plus' title='increase volume' onclick='changeVolume("+");'>Increase volume</button>
+<button id='volume-dec-button' class='volume-minus' title='decrease volume' onclick='changeVolume("-");'>Decrease volume</button>
+
+
+
+<span class='play-item' onclick='loadVideo("parrots.webm", "parrots.
+mp4");'>Parrots</span>
+</li>
+<li>
+<span class='play-item' onclick='loadVideo("paddle-wheel.webm",
+"paddle-wheel.mp4");'>Paddle Steamer Wheel</span>
+</li>
+<li>
+<span class='play-item' onclick='loadVideo("grass.webm", "grass.
+mp4");'>Grass</span>
+
+
+.volume-minus { background-position:-76px 0; }
+.volume-plus { background-position:-57px 0; }
+
+
+
+function stopPlayer() {
+   mediaPlayer.pause();
+   mediaPlayer.currentTime = 0;
+}
+
+
+function changeVolume(direction) {
+   if (direction === '+') mediaPlayer.volume += mediaPlayer.volume == 1 ? 0 : 0.1;
+   else mediaPlayer.volume -= (mediaPlayer.volume == 0 ? 0 : 0.1);
+   mediaPlayer.volume = parseFloat(mediaPlayer.volume).toFixed(1);
+}
+
+function replayMedia() {
+   resetPlayer();
+   mediaPlayer.play();
+}
+

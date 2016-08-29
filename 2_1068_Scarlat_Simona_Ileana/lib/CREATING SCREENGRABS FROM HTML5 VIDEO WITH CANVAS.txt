@@ -1,0 +1,52 @@
+Am urmarit tutorialul: 
+https://www.youtube.com/watch?v=q4IzTcciNak
+
+(function(){
+  var v = document.querySelector('video'),
+      n = document.querySelector('source').src.replace(/.*\/|\..*$/g,''),
+      c = document.querySelector('canvas'),
+      save = document.querySelector('#save ul'),
+      ctx = c.getContext('2d');
+
+  v.addEventListener('loadedmetadata',function(ev){
+    
+    var ratio = v.videoWidth/v.videoHeight,
+        w = 400,
+        h = ~~(280/ratio),
+        time = 0,
+        img = null,
+        li = null;
+    c.width = w;
+    c.height = h + 40;
+  
+  
+    v.addEventListener('timeupdate',function(ev){
+      if(v.paused){
+        ctx.fillStyle = 'rgb(0, 0, 0)';
+        ctx.fillRect(0, 0, w,h);
+        ctx.drawImage(v,0,40,w,h);
+        ctx.font = '20px Calibri';
+        ctx.fillStyle = 'lime';
+        ctx.fillText(n,5,20);
+        time = format(v.currentTime);
+        ctx.fillStyle = 'white';
+        ctx.fillText(time, 395 - ctx.measureText(time).width, 20);
+        ctx.fill();
+      }
+    },false);
+
+  },false);
+
+  function format(time){
+    var hours = parseInt((time / 60 / 60) % 60, 10),
+        mins = parseInt((time / 60) % 60, 10),
+        secs = parseInt(time, 10) % 60,
+        hourss = (hours < 10 ? '0' : '') + parseInt(hours, 10) + ':',
+        minss = (mins < 10 ? '0' : '') + parseInt(mins, 10) + ':',
+        secss  = (secs < 10 ? '0' : '') +(secs % 60),
+        timestring = ( hourss !== '00:' ? hourss : '' ) + minss + secss;
+    return timestring;
+  };
+})();
+
+}, false);

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+	<head>
+		<meta charset='utf-8' />
+		<title>My Top 4 Movies</title>
+		<!--------------------------------------->
+		<!---               CSS                -->
+		<!--------------------------------------->
+		
+		<link href='2_1068_Scarlat_Simona_Ileana.css' rel='stylesheet' />
+		
+		<!--------------------------------------->
+		<!---         JAVASCRIPT               -->
+		<!--------------------------------------->
+		<script src='2_1068_Scarlat_Simona_Ileana.js'></script>
+	</head>
+	
+<body>
+		<h1>My Top 4 Movies</h1>
+	
+		<!-- sectiune in care va fi afisata captura de ecran din videoclipul curent -->
+		<div id="screenshotCanvas" width="250" height="200">
+			<canvas></canvas>		
+		</div>
+	
+		<div id='media-player'>
+		<video id='media-video' controls>
+			<source src='media/1.mp4' type='video/mp4'>
+			<track src="1-en.vtt" label="English subtitles" kind="subtitles" srclang="en" default></track>			
+		</video>
+		
+		
+		<div id='media-controls'>
+		    <!--------------------------------------------------------------->
+			<!--BUTOANE DESENATE IN CANVAS PENTRU PLAY PAUSE NEXT PREVIOUS -->
+			<!--------------------------------------------------------------->
+			<canvas id="play-canvas" width="20" height="20"> </canvas>
+			<canvas id="pause-canvas" width="20" height="20"> </canvas>
+			<canvas id="previous-canvas" width="20" height="20"> </canvas>
+			<canvas id="next-canvas" width="20" height="20"> </canvas>
+			<!---------------------------------------------------------------->
+			<!--            CONTROALE PENTRU VIDEO PLAYER                   -->
+			<!----------------------------------------------------------------->
+			<progress id='progress-bar' min='0' max='100' value='0'>0% played</progress>
+			<button id='volume-inc-button' class='volume-plus' title='increase volume' onclick='changeVolume("+");'>Increase volume</button>
+			<button id='volume-dec-button' class='volume-minus' title='decrease volume' onclick='changeVolume("-");'>Decrease volume</button>
+		</div>	 
+		</div>	
+            <!---------------------------------------------------------------------->
+			<!--                LISTA VIDEOCLIPURI DISPONIBILE                    -->
+			<!---------------------------------------------------------------------->
+		<div id='media-play-list'>
+			<h2>Playlist</h2>
+			<ul id='play-list'>
+				<li><span class='play-item' onclick='loadVideo("media/1.mp4", "media/1.wbm");'>Now you see me 2</span></li>
+				<li><span class='play-item' onclick='loadVideo("media/2.mp4", "media/2.wbm");'>Spectre</span></li>
+				<li><span class='play-item' onclick='loadVideo("media/3.mp4", "media/3.wbm");'>Star Wars VII</span></li>
+				<li><span class='play-item' onclick='loadVideo("media/4.mp4", "media/4.wbm");'>This means war</span></li>
+			</ul>
+		</div>
+    </div>	
+		
+<!------------------------------------------------------------------------------------->
+<!---                        FLIPING CARD This means war                          ----->
+<!------------------------------------------------------------------------------------->
+		<div class="card-container">
+			<div class="card">
+			<div class="front">This means war</div>
+				<div class="back">
+				<img src="media/war.png" type="img/png"/>
+		        </div>
+			</div>	
+		</div>
+<!------------------------------------------------------------------------------------->
+<!---                        FLIPING CARD This Star Wars                          ----->
+<!------------------------------------------------------------------------------------->	
+		<div class="card-container">
+			<div class="card2">
+			<div class="front">Star Wars</div>
+				<div class="back">
+				<img src="media/star_wars.png" type="img/png"/>
+				</div>
+			</div>	
+		</div>
+<!------------------------------------------------------------------------------------->
+<!---                        FLIPING CARD Spectre                                 ----->
+<!------------------------------------------------------------------------------------->
+		<div class="card-container">
+			<div class="card3">
+			<div class="front">Spectre</div>
+				<div class="back">
+				<img src="media/spectre.png" type="img/png"/>
+				</div>
+			</div>	
+		</div>
+<!------------------------------------------------------------------------------------->
+<!---                        FLIPING CARD Now you see me                          ----->
+<!------------------------------------------------------------------------------------->
+		<div class="card-container">
+			<div class="card4">
+			<div class="front">Now you see me</div>
+				<div class="back">
+				<img src="media/see.png" type="img/png"/>
+				</div>
+			</div>	
+		</div>
+</body>
+</html>

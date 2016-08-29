@@ -1,0 +1,25 @@
+https://www.youtube.com/watch?v=bCYz_N6BIPw&list=PLlkGN-8wjPHWYT_00xdUibDPfHZ3Zm8i3
+https://www.youtube.com/watch?v=8pNzjUjvNsY&list=PLlkGN-8wjPHWYT_00xdUibDPfHZ3Zm8i3&index=14
+https://www.youtube.com/watch?v=YJWv0bJDYH4&list=PLlkGN-8wjPHWYT_00xdUibDPfHZ3Zm8i3&index=18
+
+
+window.addEventListener('load', function(event)
+{
+	draw();
+});
+
+
+ctx.canvas.addEventListener('mousedown',function(event){
+		//determina coordonatele mouse-ului pe orizontala si pe verticala
+
+		var mouseX = event.clientX - ctx.canvas.offsetLeft;
+		var mouseY = event.clientY - ctx.canvas.offsetTop;
+});
+
+ctx.beginPath();
+ctx.fillStyle ='black';
+
+
+ctx.stroke();
+ctx.fill();
+ctx.closePath();	

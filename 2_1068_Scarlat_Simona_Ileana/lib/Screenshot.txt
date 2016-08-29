@@ -1,0 +1,2 @@
+Tutorialul:
+https://www.christianheilmann.com/2011/07/01/creating-screengrabs-from-html5-video-with-canvas/
